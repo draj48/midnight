@@ -29,11 +29,32 @@ class WatchComponent extends Component
         }
         if ($listing->type == 'movie') {
             if (config('settings.vidsrc') and $listing->tmdb_id) {
-//                $this->videos[] = [
-//                    'label' => 'Flicky',
-//                    'type' => 'embed',
-//                    'link' => 'https://flicky.host/embed/movie/?id=' . $listing->tmdb_id . '&server=Multi',
-//                ];
+
+
+
+                $this->videos[] = [
+                    'label' => 'Dual',
+                    'type' => 'embed',
+                    'link' => 'https://vidify.top/embed/movie/' . $listing->tmdb_id,
+                ];
+
+
+
+
+
+                $this->videos[] = [
+                    'label' => 'Dual+',
+                    'type' => 'embed',
+                    'link' => 'https://www.vidsrc.wtf/api/2/movie/?id=' . $listing->tmdb_id,
+                ];
+
+
+
+                $this->videos[] = [
+                    'label' => 'Flicky',
+                    'type' => 'embed',
+                   'link' => 'https://flicky.host/embed/movie/?id=' . $listing->tmdb_id . '&server=Multi',
+                ];
 
 
 
@@ -43,19 +64,6 @@ class WatchComponent extends Component
                     'type' => 'embed',
                     'link' => 'https://player.videasy.net/movie/' . $listing->tmdb_id,
                 ];
-
-
-
-
-
-//                $this->videos[] = [
-//                    'label' => 'Dual',
-//                    'type' => 'embed',
-//                    'link' => 'https://www.vidsrc.wtf/api/2/movie/?id=' . $listing->tmdb_id,
-//                ];
-
-
-
 
 
                 $this->videos[] = [
@@ -135,6 +143,12 @@ class WatchComponent extends Component
 
 
 
+                $this->videos[] = [
+                    'label' => 'Anime',
+                    'type' => 'embed',
+                    'link' => 'https://api.flixindia.site/movie/' . $listing->tmdb_id,
+                ];
+
 
 //                    'label' => 'AniSAGA',
 //                    'type' => 'embed',
@@ -170,19 +184,6 @@ class WatchComponent extends Component
             }
         } elseif (isset($listing->post->type) AND $listing->post->type == 'tv') {
             if (config('settings.vidsrc') and $listing->post->tmdb_id) {
-//                $this->videos[] = [
-//                    'label' => 'Flicky',
-//                    'type' => 'embed',
-//                    'link' => 'https://flicky.host/embed/tv/?id=' . $listing->post->tmdb_id . '/' . $listing->season_number . '/' . $listing->episode_number . '&server=Multi',
-//                ];
-
-
-
-                $this->videos[] = [
-                    'label' => 'Prime',
-                    'type' => 'embed',
-                    'link' => 'https://player.videasy.net/tv/' . $listing->post->tmdb_id . '/' . $listing->season_number . '/' . $listing->episode_number,
-                ];
 
 
 
@@ -191,7 +192,31 @@ class WatchComponent extends Component
                 $this->videos[] = [
                     'label' => 'Dual',
                     'type' => 'embed',
+                    'link' => 'https://vidify.top/embed/tv/' . $listing->post->tmdb_id . '/' . $listing->season_number . '/' . $listing->episode_number,
+                ];
+
+
+
+
+                $this->videos[] = [
+                    'label' => 'Dual+',
+                    'type' => 'embed',
                     'link' => 'https://www.vidsrc.wtf/api/2/tv/?id=' . $listing->post->tmdb_id . '&s=' . $listing->season_number . '&e=' . $listing->episode_number,
+                ];
+
+
+
+                $this->videos[] = [
+                    'label' => 'Flicky',
+                    'type' => 'embed',
+                    'link' => 'https://flicky.host/embed/tv/?id=' . $listing->post->tmdb_id . '/' . $listing->season_number . '/' . $listing->episode_number . '&server=Multi',
+                ];
+
+
+                $this->videos[] = [
+                    'label' => 'Prime',
+                    'type' => 'embed',
+                    'link' => 'https://player.videasy.net/tv/' . $listing->post->tmdb_id . '/' . $listing->season_number . '/' . $listing->episode_number,
                 ];
 
 
@@ -252,12 +277,18 @@ class WatchComponent extends Component
                     'link' => 'https://embed.su/embed/tv/' . $listing->post->tmdb_id . '/' . $listing->season_number . '/' . $listing->episode_number,
                 ];
                 
+
+
                 
-                
-                
-                
-                
-                
+                $this->videos[] = [
+                    'label' => 'Anime',
+                    'type' => 'embed',
+                    'link' => 'https://api.flixindia.site/anime/' . $listing->post->tmdb_id . '/' . $listing->season_number . '/' . $listing->episode_number,
+                ];                
+    
+   
+   
+   
                 
 //                $this->videos[] = [
 //                    'label' => 'AniSAGA',
