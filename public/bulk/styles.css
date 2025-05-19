@@ -1,0 +1,166 @@
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --container-background: #fff;
+    --button-background: #007BFF;
+    --button-text: white;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+.container {
+    background-color: var(--container-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-row .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-row .form-group:last-child {
+    margin-right: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+input[type="number"],
+input[type="text"],
+textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input[type="submit"], .button {
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.button.small {
+    padding: 5px 10px;
+    width: auto;
+    margin-top: 0;
+}
+
+.success {
+    color: green;
+    margin-bottom: 20px;
+}
+
+.theme-switcher {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.theme-switcher button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.theme-switcher .light {
+    background-color: #007BFF;
+    color: white;
+}
+
+.theme-switcher .dark {
+    background-color: #333;
+    color: white;
+}
+
+/* Dark Theme */
+body.dark {
+    --background-color: #333;
+    --text-color: #f4f4f4;
+    --container-background: #444;
+    --button-background: #555;
+    --button-text: white;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .form-row .form-group {
+        flex: 100%;
+        margin-right: 0;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+}

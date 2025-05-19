@@ -1,0 +1,65 @@
+.apexcharts-text,
+.apexcharts-title-text,
+.apexcharts-legend-text {
+    @apply font-sans;
+}
+
+.apexcharts-title-text {
+    @apply font-normal;
+}
+
+.apexcharts-pie-label {
+    @apply text-sm font-normal;
+}
+
+// Dropdown
+.apexcharts-toolbar{
+    text-align: left !important;
+}
+
+.apexcharts-menu {
+
+    @apply bg-white dark:bg-gray-800 shadow-xl rounded-lg;
+    border: 0 !important;
+    padding: 0.5rem 0 !important;
+    overflow: hidden;
+    min-width: 10rem !important;
+
+    .apexcharts-menu-item {
+        @apply py-3 px-5 transition-all bg-transparent;
+    }
+}
+
+// Tooltips
+.apexcharts-tooltip {
+    &.apexcharts-theme-light {
+        @apply bg-white shadow-lg rounded-xl border-none p-2 #{!important};
+
+        .apexcharts-tooltip-title {
+            @apply bg-transparent border-none #{!important};
+        }
+    }
+
+    .apexcharts-tooltip-title {
+        padding: 0.25rem 0.5rem;
+        @apply bg-white text-sm text-gray-500 font-medium #{!important};
+    }
+
+    .apexcharts-tooltip-series-group {
+        @apply bg-white;
+    }
+}
+
+.apexcharts-xaxistooltip {
+    &.apexcharts-theme-light {
+        @apply bg-white dark:bg-gray-800 shadow-lg rounded-lg border-none;
+
+        &:before {
+            display: none;
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+}

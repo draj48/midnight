@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+[x-cloak] {
+    display: none !important;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+@import "font.scss";
+@import "tippy.scss";
+@import "select.scss";
+@import "apex.scss";
+@import "swiper.scss";
+@import "player/videojs/videojs.scss";
+@import "player/plyr/plyr.scss";
+@import "colorpicker.scss";
+
+.custom-watch-container {
+    @apply 2xl:max-w-[100rem] w-full mx-auto px-6 lg:px-8;
+}
+.custom-container {
+    @apply container;
+}
+.tox-promotion {
+    @apply hidden;
+}
+
+.tox-tinymce {
+    @apply font-sans w-full px-4 py-3 border border-gray-200 rounded-md text-sm focus:border-primary-500 focus:ring-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 placeholder-gray-400/70 shadow-sm #{!important};
+
+}
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+    box-shadow: none !important;
+    @apply border-solid border-b border-gray-200 #{!important};
+    padding: 0 0 10px !important;
+}
+
+.tox .tox-edit-area {
+    @apply py-3 dark:bg-gray-800;
+}
+
+.tox .tox-tbtn--bespoke {
+    background-color: transparent !important;
+}
+.mce-content-body {
+    @apply dark:bg-gray-800;
+}
+
+
+.hamburger svg > *:nth-child(1),
+.hamburger svg > *:nth-child(2),
+.hamburger svg > *:nth-child(3) {
+    transform-origin: center;
+    transform: rotate(0deg);
+}
+
+.hamburger svg > *:nth-child(1) {
+    transition: y 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), opacity 0.1s ease-in;
+}
+
+.hamburger svg > *:nth-child(2) {
+    transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger svg > *:nth-child(3) {
+    transition: y 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), width 0.1s 0.25s ease-in;
+}
+
+.hamburger.active svg > *:nth-child(1) {
+    opacity: 0;
+    y: 11;
+    transform: rotate(225deg);
+    transition: y 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.1s 0.12s ease-out;
+}
+
+.hamburger.active svg > *:nth-child(2) {
+    transform: rotate(225deg);
+    transition: transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburger.active svg > *:nth-child(3) {
+    y: 11;
+    transform: rotate(135deg);
+    transition: y 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), width 0.1s ease-out;
+}
+.texture-text {
+    line-height: 1.2;
+    overflow: hidden;
+    font-weight: 900;
+    background: url(../img/texture.webp);
+    background-repeat: repeat-x;
+    background-position: 100% 100%;
+    color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button,
+input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+}
+.container-fluid {
+    @apply max-w-[140rem] mx-auto w-full px-4 lg:px-8;
+}
+.container-padding {
+    @apply px-5 lg:px-10;
+}
+
+.rounded-base {
+    @apply rounded-lg;
+}
+
+.table-list {
+    @apply min-w-full divide-y divide-gray-100 dark:divide-gray-700;
+    thead {
+        @apply bg-white border-b border-gray-100 dark:border-gray-800 dark:bg-gray-900;
+        th {
+            @apply px-8 py-3 text-left text-xs font-normal text-gray-400 dark:text-gray-200;
+        }
+    }
+    tbody {
+        @apply divide-y divide-gray-100 dark:divide-gray-700;
+        tr {
+            @apply bg-white dark:bg-gray-900 dark:hover:bg-gray-800;
+            td {
+                @apply px-8 py-4 h-px w-px whitespace-nowrap;
+            }
+            td:last-child {
+                @apply text-right #{!important};
+            }
+        }
+    }
+}

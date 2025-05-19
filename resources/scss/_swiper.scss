@@ -1,0 +1,295 @@
+@import 'node_modules/swiper/swiper';
+@import 'node_modules/swiper/modules/pagination/pagination';
+@import 'node_modules/swiper/modules/effect-fade/effect-fade';
+
+@at-root {
+    :root {
+        --swiper-navigation-size: 14px;
+
+        --swiper-navigation-top-offset: 50%;
+        --swiper-navigation-sides-offset: -20px;
+        --swiper-navigation-color: #fff;
+
+    }
+}
+
+.swiper-index {
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: absolute;
+        width: 50px;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--swiper-navigation-color, var(--color-primary-500));
+
+        &.swiper-button-disabled {
+            opacity: 0;
+            cursor: auto;
+            pointer-events: none;
+        }
+
+        &.swiper-button-hidden {
+            opacity: 0;
+            cursor: auto;
+            pointer-events: none;
+        }
+
+        .swiper-navigation-disabled & {
+            display: none !important;
+        }
+
+        &:after {
+            font-family: swiper-icons;
+            font-size: var(--swiper-navigation-size);
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            z-index: 10;
+            position: relative;
+            width: 40px;
+            height: 70px;
+            color: #fff;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @apply backdrop-blur-sm bg-gray-900/50 dark:bg-gray-600/70;
+        }
+
+        &:hover:after {
+            @apply bg-white/50;
+        }
+    }
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+    &:after {
+        content: 'prev';
+    }
+
+    left: var(--swiper-navigation-sides-offset, 10px);
+    right: auto;
+
+    &.swiper-button-disabled:before {
+        display: none !important;
+    }
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+    &:after {
+        content: 'next';
+    }
+
+    right: var(--swiper-navigation-sides-offset, 10px);
+    left: auto;
+
+    &.swiper-button-disabled:before {
+        display: none !important;
+    }
+}
+
+.swiper-index {
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        width: 40px;
+        display: none;
+
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+
+        display: none;
+        width: 40px;
+
+    }
+}
+
+.swiper-index {
+    &:hover {
+        .swiper-button-next,
+        .swiper-rtl .swiper-button-prev,
+        .swiper-button-prev,
+        .swiper-rtl .swiper-button-next {
+            display: flex;
+        }
+
+    }
+}
+
+@media (max-width: 768px) {
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        left: -18px;
+        width: 40px;
+    }
+
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        right: -18px;
+        width: 40px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 40px;
+
+        &:after {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .swiper-button-next,
+    .swiper-rtl .swiper-button-prev {
+        width: 80px;
+
+        &:before {
+            width: 50px;
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+
+        width: 80px;
+
+        &:before {
+            width: 50px;
+        }
+    }
+}
+
+.swiper-button-lock {
+    display: none;
+}
+
+
+.swiper-hero {
+    padding-bottom: 2rem;
+    .swiper-arrow {
+
+        position: absolute;
+        width: 60px;
+        top: 0;
+        right: 0rem;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        z-index: 10;
+        cursor: pointer;
+        color: var(--swiper-navigation-color, var(--color-primary-500));
+
+        &.swiper-button-disabled {
+            opacity: 0;
+            cursor: auto;
+            pointer-events: none;
+        }
+
+        &.swiper-button-hidden {
+            opacity: 0;
+            cursor: auto;
+            pointer-events: none;
+        }
+
+        .swiper-navigation-disabled & {
+            display: none !important;
+        }
+
+        &:after {
+            font-family: swiper-icons;
+            font-size: var(--swiper-navigation-size);
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            z-index: 10;
+            position: relative;
+            width: 54px;
+            height: 54px;
+            color: #fff;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @apply backdrop-blur-sm bg-gray-900/50 dark:bg-gray-400/30;
+        }
+
+        &:hover:after {
+            @apply bg-primary-500;
+        }
+    }
+    .swiper-button-prev,
+    .swiper-rtl .swiper-button-next {
+        margin-bottom: 1rem;
+
+    }
+
+}
+
+.swiper-hero .swiper-pagination {
+    bottom: 0px;
+}
+
+.swiper-hero .swiper-pagination-bullet {
+    border-radius: 100px;
+    position: relative;
+    overflow: hidden;
+    @apply bg-gray-800 w-8 h-1.5 opacity-100;
+    margin: 0 6px !important;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.swiper-hero .swiper-pagination-bullet-active {
+    @apply bg-gray-800 w-12 opacity-100 #{!important};
+
+    &::before {
+        @apply bg-primary-500;
+        border-radius: 100px;
+        animation: slide-progress 4s cubic-bezier(.3, 0, .3, 1) forwards !important;
+
+    }
+}
+
+.swiper-hero.swiper-paused {
+    .swiper-pagination-bullet-active {
+        &::before {
+            animation-play-state: paused !important;
+        }
+    }
+}
+
+@keyframes slide-progress {
+    0% {
+        transform: translateX(-100%);
+        // width: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        // width: 100%;
+    }
+}
