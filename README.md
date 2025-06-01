@@ -60,7 +60,7 @@ this code base on Wovie
 
 *** Note: I have not created this code myself, it was created by Codelug, I have just modified it because the original developer has not been updating it for a long time. ***
   
-***Can be found on discord as __[DRAJ](https://discord.gg/6u7gagxSFD)__***
+***Can be found on discord as __[DRAJ](https://t.me/draj48)__***
   
 
 
